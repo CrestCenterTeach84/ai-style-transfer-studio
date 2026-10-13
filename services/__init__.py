@@ -1,0 +1,1 @@
+"""Service layer: model registry, style catalog, cache, telemetry."""
