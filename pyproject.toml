@@ -1,0 +1,26 @@
+[project]
+name = "ai-style-transfer-studio"
+version = "1.3.2"
+description = "Windows desktop AI style transfer generator — pipeline-driven, plugin-friendly, GPU-accelerated."
+readme = "CONTRIBUTING.md"
+requires-python = ">=3.11"
+authors = [{ name = "ai-style-transfer-studio maintainers", email = "maint@aistylestudio.dev" }]
+license = { text = "MIT" }
+
+[project.scripts]
+aistyle = "app.main:cli"
+aistyle-preview = "drivers.preview_driver:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*", "core*", "handlers*", "processors*", "drivers*", "services*", "models*", "utils*"]
